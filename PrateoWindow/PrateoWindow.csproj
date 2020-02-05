@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="FindPIPoint.cs" />
     <Compile Include="GetRecordedValues.cs" />
-    <Compile Include="HistoData.cs" />
+    <Compile Include="GetTupleList.cs" />
     <Compile Include="MyPI.cs" />
     <Compile Include="Prateo.cs">
       <SubType>Form</SubType>

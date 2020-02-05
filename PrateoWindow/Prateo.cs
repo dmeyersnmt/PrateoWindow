@@ -27,7 +27,8 @@ namespace PrateoWindow
             GetRecordedValues getRecordedValues = new GetRecordedValues("*-7d", "*", pipointName, MyPI.PIservername);
             var valuelist = new SanitizeAFValues(getRecordedValues.ValueList).afValues;
 
-            HistoData histoData = new HistoData(valuelist);
+            List<Tuple<string, int>> tupleList = new GetTupleList(valuelist).tupleList;
+
         }
     }
 }

@@ -7,23 +7,26 @@ using OSIsoft.AF.Asset;
 
 namespace PrateoWindow
 {
-    public class HistoData
+    public class GetTupleList
     {
 
-        public HistoData(List<AFValue> _valueList)
+        public List<Tuple<string, int>> tupleList;
+
+        public GetTupleList(List<AFValue> _valueList)
         {
             GroupByValue(_valueList);
         }
 
         private void GroupByValue(List<AFValue> valueList)
         {
+            tupleList = new List<Tuple<string, int>>();
             var q = valueList.GroupBy(x => x.Value);
             foreach (var i in q)
             {
-                Console.WriteLine("{0};{1}", i.Key, i.Count());
+                Tuple<string, int> tuple = new Tuple<string, int>(i.Key.ToString(), i.Count());
+                tupleList.Add(tuple);
+                //Console.WriteLine("{0};{1}", i.Key, i.Count());
             }
-
         }
-
     }
 }
