@@ -13,7 +13,6 @@ namespace PrateoWindow
         public HistoData(List<AFValue> _valueList)
         {
             GroupByValue(_valueList);
-
         }
 
         private void GroupByValue(List<AFValue> valueList)

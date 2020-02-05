@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button_Build = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,11 +41,22 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // button_Build
+            // 
+            this.button_Build.Location = new System.Drawing.Point(12, 92);
+            this.button_Build.Name = "button_Build";
+            this.button_Build.Size = new System.Drawing.Size(75, 23);
+            this.button_Build.TabIndex = 1;
+            this.button_Build.Text = "Build";
+            this.button_Build.UseVisualStyleBackColor = true;
+            this.button_Build.Click += new System.EventHandler(this.button_Build_Click);
+            // 
             // Prateo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 450);
+            this.Controls.Add(this.button_Build);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Prateo";
             this.Text = "Prateo";
@@ -56,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button_Build;
     }
 }
 
