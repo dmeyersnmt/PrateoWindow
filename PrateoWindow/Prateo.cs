@@ -74,7 +74,8 @@ namespace PrateoWindow
                 Bitmap bitmapWithRectangle = Draw_Rectangles(rectangleList);
                 Bitmap bitmapWithAxis = Draw_Axis(bitmapWithRectangle, padding_x, padding_y);
                 Bitmap bitmapWithTicks = Draw_TickMarks(bitmapWithAxis, padding_x, padding_y, rectangleList);
-                pictureBox1.Image = bitmapWithTicks;
+                Bitmap bitmapWithLabels = Draw_Labels(bitmapWithTicks, padding_x, padding_y, rectangleList, tupleList);
+                pictureBox1.Image = bitmapWithLabels;
             }
             else
             {
@@ -130,7 +131,29 @@ namespace PrateoWindow
             return bitmap;
         }
 
-
+        private Bitmap Draw_Labels(Bitmap bitmap, int padding_x, int padding_y, List<RectangleF> rectangleList, List<Tuple<string, int>> tupleList)
+        {
+            Pen blackPen = new Pen(Color.Black);
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                Font font = new Font("Tahoma", 11);
+                Brush brush = Brushes.Black;
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+                g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+                  
+                for(int i = 0; i<rectangleList.Count; i++)
+                {
+                    string label_text = tupleList[i].Item1;
+                    var label_size = g.MeasureString(label_text, font);
+                    float midpoint_x = rectangleList[i].X + (rectangleList[i].Width / 2);
+                    float midpoint_y = (float)(pictureBox1.Height - padding_y + 5);
+                    g.DrawString(label_text, font, brush, midpoint_x - label_size.Width / 2, midpoint_y);
+                }
+            }
+            return bitmap;
+        }
 
         private void Fill_ComboBox()
         {
