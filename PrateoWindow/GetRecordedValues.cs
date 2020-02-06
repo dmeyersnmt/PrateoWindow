@@ -34,7 +34,15 @@ namespace PrateoWindow
         {
             get
             {
-                return piPoint.RecordedValues(afTimeRange, AFBoundaryType.Inside, null, true);
+                if(piPoint!=null)
+                {
+                    return piPoint.RecordedValues(afTimeRange, AFBoundaryType.Inside, null, true);
+                }
+                else
+                {
+                    return null;
+                }
+                
             }
         }
 
