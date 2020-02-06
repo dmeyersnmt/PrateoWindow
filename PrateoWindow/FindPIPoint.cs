@@ -15,7 +15,17 @@ namespace PrateoWindow
 
         public PIPoint piPoint
         {
-            get { return PIPoint.FindPIPoint(MyPI.PI_Server, pointName); }
+            get 
+            {
+                try
+                {
+                    return PIPoint.FindPIPoint(MyPI.PI_Server, pointName);
+                }
+                catch(Exception e)
+                {
+                    return null;
+                }
+            }
         }
 
         public FindPIPoint(string _pointName, string _serverName)
