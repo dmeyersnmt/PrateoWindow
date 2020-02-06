@@ -9,16 +9,14 @@ using OSIsoft.AF;
 namespace PrateoWindow
 {
     public class GetConnectedServers
-    {
-    
-        public void ConnectedServers()
+    { 
+
+        public PIServers piServers
         {
-            PIServers piServers = new PIServers();
-
-
-
-
+            get
+            {
+                return new PIServers();
+            }
         }
-    
     }
 }
