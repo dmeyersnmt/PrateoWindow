@@ -19,6 +19,27 @@ namespace PrateoWindow
 
         private void button_Build_Click(object sender, EventArgs e)
         {
+            Create_FrequencyChart();
+        }
+
+        private void Draw_Rectangles(List<RectangleF> rectangleList)
+        {
+            Bitmap bitmap = (Bitmap)pictureBox1.Image;
+            SolidBrush brush = new SolidBrush(Color.Blue);
+
+            using (Graphics g = pictureBox1.CreateGraphics())
+            {
+                foreach (RectangleF rectangle in rectangleList)
+                {
+                    g.FillRectangle(brush, rectangle);
+
+                }
+
+            }
+        }
+
+        private void Create_FrequencyChart()
+        {
             MyPI.AFserverName = "APBDPAP0043";
             MyPI.AFdatabaseName = "2004_NBG";
             MyPI.PIservername = "AFAHPAP0010";
@@ -38,10 +59,10 @@ namespace PrateoWindow
             int picturebox_x = pictureBox1.Width;
             int picturebox_y = pictureBox1.Height;
 
-            int window_x = picturebox_x - padding_x*2;
-            int window_y = picturebox_y - padding_y*2;
+            int window_x = picturebox_x - padding_x * 2;
+            int window_y = picturebox_y - padding_y * 2;
 
-            float bar_x_ratio =(float)0.80;
+            float bar_x_ratio = (float)0.80;
             float bar_x = window_x / barCount * bar_x_ratio;
 
             float barspace_x = (1 - bar_x_ratio) * (window_x / barCount);
@@ -51,35 +72,17 @@ namespace PrateoWindow
 
             List<RectangleF> rectangleList = new List<RectangleF>();
 
-            for(int i=0; i<barCount;i++)
+            for (int i = 0; i < barCount; i++)
             {
                 int value_y = tupleList[i].Item2;
                 float rectangle_y = value_y * window_y / maximum_y;
-                RectangleF rectangle = new RectangleF(start_x, padding_y+(window_y-rectangle_y), bar_x, rectangle_y);
+                RectangleF rectangle = new RectangleF(start_x, padding_y + (window_y - rectangle_y), bar_x, rectangle_y);
                 rectangleList.Add(rectangle);
                 start_x += bar_x + barspace_x;
             }
 
             Draw_Rectangles(rectangleList);
-        }
-
-        private void Draw_Rectangles(List<RectangleF> rectangleList)
-        {
-            Bitmap bitmap = (Bitmap)pictureBox1.Image;
-            SolidBrush brush = new SolidBrush(Color.Blue);
-
-            using (Graphics g = pictureBox1.CreateGraphics())
-            {
-                foreach (RectangleF rectangle in rectangleList)
-                {
-                    g.FillRectangle(brush, rectangle);
-
-                }
-
-            }
-            
 
         }
-
     }
 }
