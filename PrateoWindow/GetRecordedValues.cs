@@ -54,5 +54,12 @@ namespace PrateoWindow
             this.piPointName = _piPointName;
             this.piServerName = _piServerName;
         }
+
+        public bool CheckAFTimeValues(string afTimeString)
+        {
+            AFTime afTime;
+            var valid = AFTime.TryParse(afTimeString, out afTime);
+            return valid;
+        }
     }
 }
