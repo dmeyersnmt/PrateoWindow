@@ -136,7 +136,7 @@ namespace PrateoWindow
             Pen blackPen = new Pen(Color.Black);
             using (Graphics g = Graphics.FromImage(bitmap))
             {
-                Font font = new Font("Tahoma", 11);
+                Font font = new Font("Tahoma", 8);
                 Brush brush = Brushes.Black;
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;

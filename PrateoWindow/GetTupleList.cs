@@ -27,6 +27,7 @@ namespace PrateoWindow
                 tupleList.Add(tuple);
                 //Console.WriteLine("{0};{1}", i.Key, i.Count());
             }
+            tupleList = tupleList.OrderByDescending(y => y.Item2).ToList();
         }
     }
 }
