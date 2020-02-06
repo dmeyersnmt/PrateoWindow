@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CenterWinDialog.cs" />
     <Compile Include="FindPIPoint.cs" />
     <Compile Include="GetConnectedServers.cs" />
     <Compile Include="GetRecordedValues.cs" />
