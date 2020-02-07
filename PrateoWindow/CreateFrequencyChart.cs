@@ -83,7 +83,13 @@ namespace PrateoWindow
         
 
         List<RectangleF> rectangleList = new List<RectangleF>();
-    
+        
+        /// <summary>
+        /// Constructor that takes in the size of the pictureBox control as well as the tuple list of clensed data
+        /// </summary>
+        /// <param name="_picturebox_x"></param>
+        /// <param name="_picturebox_y"></param>
+        /// <param name="_tupleList"></param>
         public CreateFrequencyChart(int _picturebox_x, int _picturebox_y, List<Tuple<string, int>> _tupleList)
         {
             picturebox_x = _picturebox_x;
@@ -98,7 +104,9 @@ namespace PrateoWindow
             Draw_AxisTitles();
         }
 
-    
+        /// <summary>
+        /// Creates the bars of the chart according to their values
+        /// </summary>
         private void Create_RectangleList()
         {
             start_x = space_x;
@@ -112,6 +120,9 @@ namespace PrateoWindow
             }
         }
 
+        /// <summary>
+        /// Draws the bars created on the bitmap
+        /// </summary>
         private void Draw_Rectangles()
         {
             SolidBrush brush = new SolidBrush(Color.Blue);
@@ -125,6 +136,9 @@ namespace PrateoWindow
             }
         }
         
+        /// <summary>
+        /// Adds an x and y axis to the bitmap
+        /// </summary>
         private void Draw_Axis()
         {
             Pen blackPen = new Pen(Color.Black);
@@ -136,6 +150,9 @@ namespace PrateoWindow
 
         }
 
+        /// <summary>
+        /// Adds tick mark to the x-axis on the bitmap
+        /// </summary>
         private void Draw_TickMarks()
         {
             Pen blackPen = new Pen(Color.Black);
@@ -151,6 +168,9 @@ namespace PrateoWindow
             }
         }
 
+        /// <summary>
+        /// adds labels to the x-axis as well as labels above each bar corresponding to the "y-values"
+        /// </summary>
         private void Draw_Labels()
         {
             Pen blackPen = new Pen(Color.Black);
@@ -178,6 +198,9 @@ namespace PrateoWindow
             }
         }
     
+        /// <summary>
+        /// Add labels to the x and y axis
+        /// </summary>
         private void Draw_AxisTitles()
         {
             Pen blackPen = new Pen(Color.Black);

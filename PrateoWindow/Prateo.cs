@@ -21,8 +21,8 @@ namespace PrateoWindow
         {
             Write_ToConsole("Application Loaded");
             Fill_ComboBox();
-        }
 
+        }
         private void button_Build_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = null;
