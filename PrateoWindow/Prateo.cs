@@ -17,12 +17,23 @@ namespace PrateoWindow
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Upon loading find all connected pi servers and fill the combobox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Prateo_Load(object sender, EventArgs e)
         {
             Write_ToConsole("Application Loaded");
             Fill_ComboBox();
 
         }
+
+        /// <summary>
+        /// Event that clears the picturebox then creates a new bitmap containing the frequency chart
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Build_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = null;
@@ -30,6 +41,9 @@ namespace PrateoWindow
             Prepare_FrequencyChart();
         }
 
+        /// <summary>
+        /// Function that will fill the combox box with the connected pi servers
+        /// </summary>
         private void Fill_ComboBox()
         {
             GetConnectedServers getConnectedServers = new GetConnectedServers();
@@ -44,7 +58,9 @@ namespace PrateoWindow
             Write_ToConsole("Number of connected PI Servers found: " + connectedServers.Count);
         }
 
-
+        /// <summary>
+        /// Function that retries the data, cleans the data, error checks the user input then produces the bitmap displaying the frequenchy chart
+        /// </summary>
         private void Prepare_FrequencyChart()
         {
             MyPI.PIservername = comboBoxConnectedServers.SelectedItem.ToString();
@@ -69,7 +85,6 @@ namespace PrateoWindow
                     {
                         Write_ToConsole("Total number of events found: " + getRecordedValues.ValueList.Count);
                         var valuelist = new SanitizeAFValues(getRecordedValues.ValueList).afValues;
-                        //Write_ToConsole("Cleaning data...");
                         List<Tuple<string, int>> tupleList = new GetTupleList(valuelist).tupleList;
                         if (tupleList.Count > 0)
                         {
@@ -107,11 +122,14 @@ namespace PrateoWindow
             }
         }
 
+        /// <summary>
+        /// Helper function that sends text to the console of the main form
+        /// </summary>
+        /// <param name="text"></param>
         private void Write_ToConsole(string text)
         {
             string output = String.Format("{0}: {1}", DateTime.Now, text+"\r\n");
             textBoxConsole.AppendText(output);
-
         }
     }
 }
