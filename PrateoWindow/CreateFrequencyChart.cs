@@ -195,10 +195,10 @@ namespace PrateoWindow
 
                 g.DrawString(axisX_label, font, brush, window_x / 2 + padding_x - axislabelsize_x.Width / 2, picturebox_y - axislabelsize_x.Height);
 
+                //flip the image, easiest way to write text vertically
                 bitmap.RotateFlip(RotateFlipType.Rotate90FlipNone);
-                
                 g.DrawString(axisY_label, font, brush, padding_y + (window_y / 2) - (axislabelsize_y.Width / 2), padding_x-axislabelsize_y.Height);
-
+                //flip the image back to original orientation
                 bitmap.RotateFlip(RotateFlipType.Rotate270FlipNone);
             }
         }
