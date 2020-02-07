@@ -10,6 +10,9 @@ namespace PrateoWindow
 {
     public class MyPI
     {
+        /// <summary>
+        /// Class for setting up the pi system
+        /// </summary>
         public static PISystems myPISystems = new PISystems();
         public static string AFdatabaseName { get; set; }
         public static string AFserverName { get; set; }

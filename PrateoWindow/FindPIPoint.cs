@@ -8,6 +8,10 @@ using OSIsoft.AF.PI;
 
 namespace PrateoWindow
 {
+    /// <summary>
+    /// Class for retrieving a PI Point from a PI Server.  
+    /// Returns null if no pi point found
+    /// </summary>
     public class FindPIPoint
     {
         string pointName;
@@ -21,7 +25,7 @@ namespace PrateoWindow
                 {
                     return PIPoint.FindPIPoint(MyPI.PI_Server, pointName);
                 }
-                catch(Exception e)
+                catch
                 {
                     return null;
                 }

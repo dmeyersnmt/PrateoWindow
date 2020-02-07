@@ -7,9 +7,11 @@ using OSIsoft.AF.Asset;
 
 namespace PrateoWindow
 {
+    /// <summary>
+    /// Class that uses LINQ functionality to group the recorded values by the recorded value
+    /// </summary>
     public class GetTupleList
     {
-
         public List<Tuple<string, int>> tupleList;
 
         public GetTupleList(List<AFValue> _valueList)
@@ -25,7 +27,6 @@ namespace PrateoWindow
             {
                 Tuple<string, int> tuple = new Tuple<string, int>(i.Key.ToString(), i.Count());
                 tupleList.Add(tuple);
-                //Console.WriteLine("{0};{1}", i.Key, i.Count());
             }
             tupleList = tupleList.OrderByDescending(y => y.Item2).ToList();
         }

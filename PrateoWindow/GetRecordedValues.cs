@@ -10,6 +10,10 @@ using OSIsoft.AF.PI;
 
 namespace PrateoWindow
 {
+    /// <summary>
+    /// Class responsible for fetching the recorded values of the pi point
+    /// Also has functions for trying to parse text into an AFTime
+    /// </summary>
     public class GetRecordedValues
     {
         string afStart;

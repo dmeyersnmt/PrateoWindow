@@ -8,9 +8,11 @@ using OSIsoft.AF;
 
 namespace PrateoWindow
 {
+    /// <summary>
+    /// returns all connected PI Servers
+    /// </summary>
     public class GetConnectedServers
     { 
-
         public PIServers piServers
         {
             get

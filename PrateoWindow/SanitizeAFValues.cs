@@ -7,6 +7,9 @@ using OSIsoft.AF.Asset;
 
 namespace PrateoWindow
 {
+    /// <summary>
+    /// Class that takes the recorded values and returns a list of values that are of good quality
+    /// </summary>
     public class SanitizeAFValues
     {
         public List<AFValue> afValues;
