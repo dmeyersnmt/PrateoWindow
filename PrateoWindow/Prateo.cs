@@ -17,10 +17,28 @@ namespace PrateoWindow
             InitializeComponent();
         }
 
+        private void Prateo_Load(object sender, EventArgs e)
+        {
+            Fill_ComboBox();
+        }
+
         private void button_Build_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = null;
             Prepare_FrequencyChart();
+        }
+
+        private void Fill_ComboBox()
+        {
+            GetConnectedServers getConnectedServers = new GetConnectedServers();
+            var connectedServers = getConnectedServers.piServers;
+            object[] itemObject = new object[connectedServers.Count];
+            for (int i = 0; i < connectedServers.Count; i++)
+            {
+                itemObject[i] = connectedServers[i].Name;
+            }
+            comboBoxConnectedServers.Items.AddRange(itemObject);
+            comboBoxConnectedServers.SelectedItem = itemObject[0];
         }
 
 
@@ -66,24 +84,6 @@ namespace PrateoWindow
                     MessageBox.Show("Invalid AFTime", "Error");
                 }
             }
-        }
-
-        private void Fill_ComboBox()
-        {
-            GetConnectedServers getConnectedServers = new GetConnectedServers();
-            var connectedServers = getConnectedServers.piServers;
-            object[] itemObject = new object[connectedServers.Count];
-            for(int i =0; i<connectedServers.Count;i++)
-            {
-                itemObject[i] = connectedServers[i].Name;
-            }
-            comboBoxConnectedServers.Items.AddRange(itemObject);
-            comboBoxConnectedServers.SelectedItem = itemObject[0];
-        }
-
-        private void Prateo_Load(object sender, EventArgs e)
-        {
-            Fill_ComboBox();
         }
     }
 }

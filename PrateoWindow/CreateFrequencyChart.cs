@@ -7,6 +7,9 @@ using System.Drawing;
 
 namespace PrateoWindow
 {
+    /// <summary>
+    /// Class responsible for creating the bitmap of the frequency chart that is displayed in the pictureBox
+    /// </summary>
     public class CreateFrequencyChart
     {
         List<Tuple<string, int>> tupleList;
@@ -28,6 +31,9 @@ namespace PrateoWindow
         int padding_x = 50;
         int padding_y = 50;
         float bar_x_ratio = (float)0.80;
+
+        string axisX_label = "PI Point Value";
+        string axisY_label = "Frequency";
 
         int picturebox_x;
         int picturebox_y;
@@ -89,6 +95,7 @@ namespace PrateoWindow
             Draw_Axis();
             Draw_TickMarks();
             Draw_Labels();
+            Draw_AxisTitles();
         }
 
     
@@ -170,8 +177,23 @@ namespace PrateoWindow
                 }
             }
         }
-
-
     
+        private void Draw_AxisTitles()
+        {
+            Pen blackPen = new Pen(Color.Black);
+            Brush brush = Brushes.Black;
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                Font font = new Font("Tahoma", 11);
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+                g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+
+                var axislabelsize_x = g.MeasureString(axisX_label, font);
+
+                g.DrawString(axisX_label, font, brush, window_x / 2 + padding_x - axislabelsize_x.Width / 2, picturebox_y - axislabelsize_x.Height);
+            }
+        }
     }
 }
