@@ -38,6 +38,8 @@
             this.textBoxStartTime = new System.Windows.Forms.TextBox();
             this.textBoxEndTime = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBoxConsole = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,11 +130,33 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "End Time:";
             // 
+            // textBoxConsole
+            // 
+            this.textBoxConsole.BackColor = System.Drawing.Color.Black;
+            this.textBoxConsole.ForeColor = System.Drawing.Color.Lime;
+            this.textBoxConsole.Location = new System.Drawing.Point(15, 480);
+            this.textBoxConsole.Multiline = true;
+            this.textBoxConsole.Name = "textBoxConsole";
+            this.textBoxConsole.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxConsole.Size = new System.Drawing.Size(806, 139);
+            this.textBoxConsole.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 464);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Console:";
+            // 
             // Prateo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 450);
+            this.ClientSize = new System.Drawing.Size(845, 631);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBoxConsole);
             this.Controls.Add(this.textBoxEndTime);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxStartTime);
@@ -165,6 +189,8 @@
         private System.Windows.Forms.TextBox textBoxStartTime;
         private System.Windows.Forms.TextBox textBoxEndTime;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxConsole;
+        private System.Windows.Forms.Label label5;
     }
 }
 
