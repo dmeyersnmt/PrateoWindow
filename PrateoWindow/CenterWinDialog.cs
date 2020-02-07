@@ -6,6 +6,10 @@ using System.Runtime.InteropServices;
 
 namespace PrateoWindow
 {
+    /// <summary>
+    /// Found this class online.  Used to center the message box on the parent form
+    /// Otherwise the message box will be centered on the screen
+    /// </summary>
     class CenterWinDialog:IDisposable
     {
         private int mTries = 0;
