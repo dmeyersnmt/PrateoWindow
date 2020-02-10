@@ -7,6 +7,9 @@ using OSIsoft.AF.PI;
 
 namespace PrateoWindow
 {
+    /// <summary>
+    /// Check to see if the pi point is a step function
+    /// </summary>
     public class PIPointStepAttribute
     {
         public bool isStep { get; set; }
