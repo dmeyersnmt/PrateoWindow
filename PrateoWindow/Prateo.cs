@@ -15,6 +15,7 @@ namespace PrateoWindow
         public Prateo()
         {
             InitializeComponent();
+            
         }
 
         /// <summary>
@@ -78,11 +79,11 @@ namespace PrateoWindow
             }
             else
             {
-                
-                //if(piPointStep.step !=1)
-                //{
-                //    Write_ToConsole("WARNING: Pipoint is not a step function.  Results may be unpredictable");
-                //}
+                PIPointStepAttribute piPointStepAttribute = new PIPointStepAttribute(pipointName, MyPI.PIservername);
+                if(!piPointStepAttribute.isStep)
+                {
+                    Write_ToConsole("WARNING: Pipoint is not a step function.  Results may be unpredictable");
+                }
                 GetRecordedValues getRecordedValues = new GetRecordedValues(startTime, endTime, pipointName, MyPI.PIservername);
                 if (getRecordedValues.CheckAFTimeValues(startTime) && getRecordedValues.CheckAFTimeValues(endTime))
                 {
