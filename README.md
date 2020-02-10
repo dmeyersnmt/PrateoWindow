@@ -14,9 +14,13 @@ In order to replicate the functionality of SQL without have to initiate a SQL se
 Building the application will result in 5 files in the bin\Release folder:
 
 OSIsoft.AFSDK.dll
+
 OSIsoft.AFSDK.xml
+
 PrateoWindow.exe
+
 PrateoWindow.exe.config
+
 PrateoWIndow.pnb
 
 To run the application double click on PrateoWIndow.exe
