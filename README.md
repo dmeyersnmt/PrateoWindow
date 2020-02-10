@@ -7,3 +7,19 @@ This project uses the OSIsoft.AFSDK version 4.0.  These assemblies are usually f
 
 This project targets the .NET Framework 4.8
 
+## LINQ
+In order to replicate the functionality of SQL without have to initiate a SQL server instance this project uses the LINQ functionality of the .NET environment.  Specifically a collection of data points is grouped by each instance of that data point.  It is this functionality that allows the program to produce a frequency chart
+
+## Build
+Building the application will result in 5 files in the bin\Release folder:
+
+OSIsoft.AFSDK.dll
+OSIsoft.AFSDK.xml
+PrateoWindow.exe
+PrateoWindow.exe.config
+PrateoWIndow.pnb
+
+To run the application double click on PrateoWIndow.exe
+
+## Naming
+I'm not sure if this is technically a prateo chart, as a true prateo uses a bar chart in conjunction with a line chart, but that is the name that stuck.
