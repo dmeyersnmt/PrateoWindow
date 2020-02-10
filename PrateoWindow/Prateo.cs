@@ -78,6 +78,11 @@ namespace PrateoWindow
             }
             else
             {
+                
+                //if(piPointStep.step !=1)
+                //{
+                //    Write_ToConsole("WARNING: Pipoint is not a step function.  Results may be unpredictable");
+                //}
                 GetRecordedValues getRecordedValues = new GetRecordedValues(startTime, endTime, pipointName, MyPI.PIservername);
                 if (getRecordedValues.CheckAFTimeValues(startTime) && getRecordedValues.CheckAFTimeValues(endTime))
                 {

@@ -57,6 +57,7 @@
     <Compile Include="GetRecordedValues.cs" />
     <Compile Include="GetTupleList.cs" />
     <Compile Include="MyPI.cs" />
+    <Compile Include="PiPointStep.cs" />
     <Compile Include="Prateo.cs">
       <SubType>Form</SubType>
     </Compile>
